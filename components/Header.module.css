@@ -1,0 +1,364 @@
+.headerWrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.topBar {
+  padding: 40px 0 30px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.logoTitle {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  font-weight: 400;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.logoSubtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.actions {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.langToggle {
+  background: var(--text-primary);
+  color: var(--bg-color);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  font-family: inherit;
+}
+
+.langToggle:hover {
+  opacity: 0.8;
+}
+
+.searchIcon {
+  cursor: pointer;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+}
+
+.navContainer {
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 20px 0;
+}
+
+.navList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.navItem {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navItem:hover {
+  color: var(--accent-color);
+}
+
+.activeItem {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.activeItem::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-color);
+}
+
+.separator {
+  color: #ccc;
+  font-weight: 300;
+}
+
+/* Scrolled State */
+.headerWrapper.scrolled {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.scrolled .headerLayout {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 25px 0; /* Reset padding to align left */
+  gap: 40px;
+}
+
+.scrolled .topBar {
+  padding: 0;
+  flex: 0 0 auto;
+}
+
+.scrolled .logoContainer {
+  align-items: center; /* Center the subtitle below HINDIGENOUS */
+  flex-direction: column; /* Hindi below HINDIGENOUS */
+  gap: 0px;
+}
+
+.scrolled .logoTitle {
+  font-size: 1.5rem;
+}
+
+.scrolled .logoSubtitle {
+  font-size: 0.8rem;
+}
+
+.scrolled .navContainer {
+  border: none;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.scrolled .navList {
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.scrolled .navItem {
+  font-size: 0.95rem;
+}
+
+.scrolled .actions {
+  position: static;
+  transform: none;
+  margin-left: auto;
+}
+
+.scrolled .langToggle {
+  display: none;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 5px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  width: 150px;
+}
+
+.closeSearch {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileLangToggle {
+  display: none;
+}
+
+/* Sidebar Default (Hidden on Desktop) */
+.hamburger,
+.closeSidebar {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  padding: 5px;
+}
+
+.sidebarOverlay {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .logoTitle {
+    font-size: 2.5rem;
+  }
+  .scrolled .logoTitle {
+    font-size: 1.2rem;
+  }
+  .scrolled .headerLayout {
+    gap: 15px;
+  }
+  .navList {
+    gap: 10px;
+  }
+  .navItem {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .topBar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+  .actions {
+    position: static;
+    transform: none;
+    margin-top: 0;
+    gap: 15px;
+  }
+  .langToggle {
+    display: none;
+  }
+  .mobileLangToggle {
+    display: block;
+    width: 100%;
+    background: var(--text-primary);
+    color: var(--bg-color);
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logoTitle {
+    font-size: 1.8rem;
+  }
+  
+  /* Sidebar Styles */
+  .navContainer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--bg-color);
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    z-index: 1001;
+    transition: right 0.3s ease;
+    padding: 0;
+    border: none;
+  }
+  .navContainer.sidebarOpen {
+    right: 0;
+  }
+  .closeSidebar {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .sidebarOverlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  .sidebarOverlay.overlayVisible {
+    opacity: 1;
+    visibility: visible;
+  }
+  .navList {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px 20px 20px;
+    gap: 20px;
+  }
+  .separator {
+    display: none;
+  }
+  
+  /* Scrolled State for Mobile */
+  .scrolled .headerLayout {
+    display: block;
+    padding: 0;
+  }
+  .scrolled .topBar {
+    padding: 10px 0;
+  }
+  .scrolled .logoTitle {
+    font-size: 1.5rem;
+  }
+  .scrolled .navContainer {
+    /* Kept as sidebar even when scrolled */
+    flex-grow: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoTitle {
+    font-size: 1.5rem;
+  }
+  .langToggle {
+    display: none; /* Hide language toggle on very small screens to save space */
+  }
+  .scrolled .logoTitle {
+    font-size: 1.2rem;
+  }
+  .navItem {
+    font-size: 1.1rem;
+  }
+}
