@@ -17,10 +17,10 @@ const categoryData = {
 
 const fallbackImage = DEFAULT_ARTICLE_IMAGE;
 
-export default function CategoryPageComponent({ categoryKey, initialArticles = [] }) {
+export default function CategoryPageComponent({ categoryKey }) {
   const { lang, translateArticles, getFieldText } = useLanguage();
-  const [articles, setArticles] = useState(initialArticles);
-  const [displayArticles, setDisplayArticles] = useState(initialArticles);
+  const [articles, setArticles] = useState([]);
+  const [displayArticles, setDisplayArticles] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -29,8 +29,7 @@ export default function CategoryPageComponent({ categoryKey, initialArticles = [
       setLoading(true);
       const apiArticles = await fetchCategoryArticles(categoryKey);
       if (isMounted) {
-        const listToUse = (apiArticles && apiArticles.length > 0) ? apiArticles : initialArticles;
-        setArticles(listToUse);
+        setArticles(Array.isArray(apiArticles) ? apiArticles : []);
         setLoading(false);
       }
     }
