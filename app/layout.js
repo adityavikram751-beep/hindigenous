@@ -12,8 +12,46 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Hindigenous",
-  description: "Authentic and unbiased news from the country and the world.",
+  title: "Hindigenous | भारतीय इतिहास, कला, साहित्य, संस्कृति एवं निष्पक्ष समाचार",
+  description: "Hindigenous - देश और दुनिया की प्रामाणिक, निष्पक्ष और गहन खबरें। भारतीय इतिहास, संस्कृति, कला, साहित्य और राज-पाट पर विशेष लेख। Authentic and unbiased news & heritage coverage.",
+  keywords: [
+    "Hindigenous",
+    "Hindigenous News",
+    "हिंदी समाचार",
+    "भारतीय इतिहास",
+    "भारतीय संस्कृति",
+    "साहित्य",
+    "कला",
+    "राज-पाट",
+    "Indian History",
+    "Indian Culture"
+  ],
+  authors: [{ name: "Hindigenous Team" }],
+  creator: "Hindigenous",
+  publisher: "Hindigenous",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "Hindigenous | भारतीय इतिहास, कला, साहित्य & संस्कृति",
+    description: "देश और दुनिया की प्रामाणिक एवं निष्पक्ष खबरें और भारतीय संस्कृति पर विशेष लेख।",
+    siteName: "Hindigenous",
+    locale: "hi_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hindigenous",
+    description: "Authentic & unbiased news and Indian heritage portal.",
+  },
   icons: {
     icon: '/logo.png',
     shortcut: '/logo.png',
