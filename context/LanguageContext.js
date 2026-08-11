@@ -1,6 +1,8 @@
 "use client";
 import { createContext, useState, useContext, useEffect } from "react";
 
+import { translateText, translateArticleItem, translateArticles, getFieldText } from "@/lib/translator";
+
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
@@ -19,7 +21,7 @@ export function LanguageProvider({ children }) {
   };
 
   return (
-    <LanguageContext.Provider value={{ lang, toggleLanguage }}>
+    <LanguageContext.Provider value={{ lang, toggleLanguage, translateText, translateArticleItem, translateArticles, getFieldText }}>
       {children}
     </LanguageContext.Provider>
   );

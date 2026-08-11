@@ -13,14 +13,15 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 60) {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 140) {
         setIsScrolled(true);
-      } else {
+      } else if (currentScroll < 15) {
         setIsScrolled(false);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -76,8 +77,11 @@ export default function Header() {
             {/* Header / Logo Section */}
             <header className={styles.topBar}>
               <Link href="/" className={styles.logoContainer} onClick={() => setIsSidebarOpen(false)}>
-                <h1 className={styles.logoTitle}>{t.logoTitle}</h1>
-                <span className={styles.logoSubtitle}>{t.logoSubtitle}</span>
+                <img src="/logo.png" alt="Hindigenous Logo" className={styles.logoImg} />
+                <div className={styles.logoTextGroup}>
+                  <h1 className={styles.logoTitle}>{t.logoTitle}</h1>
+                  <span className={styles.logoSubtitle}>{t.logoSubtitle}</span>
+                </div>
               </Link>
 
               <div className={styles.actions}>

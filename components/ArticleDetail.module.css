@@ -6,71 +6,87 @@
 .heroSection {
   position: relative;
   width: 100%;
-  height: 70vh;
-  min-height: 400px;
+  padding: 50px 20px 40px;
+  background-color: #111111;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  color: white;
+  justify-content: center;
 }
 
-.heroImage {
+.heroBackdrop {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  inset: -30px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(30px) brightness(0.35);
+  transform: scale(1.15);
   z-index: 0;
-}
-
-.heroOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.9) 100%);
-  z-index: 1;
 }
 
 .heroContent {
   position: relative;
   z-index: 2;
-  max-width: 1000px;
-  padding: 0 20px;
-  margin-top: auto;
-  margin-bottom: 50px;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  margin-bottom: 25px;
 }
 
 .categoryLabel {
-  font-size: 1.2rem;
-  color: #d32f2f; /* Red category label */
+  font-size: 1.1rem;
+  color: #ff5252;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .articleTitle {
   font-family: var(--font-serif);
-  font-size: 3.5rem;
-  line-height: 1.2;
+  font-size: 3rem;
+  line-height: 1.25;
   margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
 }
 
 .articleMeta {
-  font-size: 1.1rem;
-  opacity: 0.9;
+  font-size: 1.05rem;
+  opacity: 0.95;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .articleAuthor {
   font-weight: bold;
+  color: #ffc107;
+}
+
+.featuredImageWrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.articleFeaturedImage {
+  width: 100%;
+  height: auto;
+  max-height: 550px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 
 .contentWrapper {
@@ -87,20 +103,21 @@
 }
 
 .socialIcon {
-  width: 35px;
-  height: 35px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background-color: #111;
+  background-color: #222;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, transform 0.2s;
 }
 
 .socialIcon:hover {
   background-color: #d32f2f;
+  transform: translateY(-2px);
 }
 
 .articleBody {
@@ -116,7 +133,7 @@
 }
 
 .storyBody > p:first-child::first-letter {
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-weight: bold;
   font-family: var(--font-serif);
   float: left;
@@ -142,10 +159,10 @@
   position: relative;
   padding-left: 20px;
   border-left: 3px solid var(--accent-color, #b03a2e);
-  background-color: rgba(176, 58, 46, 0.02);
+  background-color: rgba(176, 58, 46, 0.03);
   border-radius: 0 8px 8px 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 
 .authorBio {
@@ -157,35 +174,41 @@
 
 .authorName {
   font-family: var(--font-serif);
-  font-size: 2.2rem;
+  font-size: 2rem;
   margin-bottom: 10px;
 }
 
 .authorDescription {
   color: var(--text-secondary);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 @media (max-width: 900px) {
   .articleTitle {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
   }
 }
 
 @media (max-width: 768px) {
   .heroSection {
-    height: 50vh;
+    padding: 30px 15px 25px;
   }
   .articleTitle {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
-  .articleBody > p:first-child::first-letter {
-    font-size: 4rem;
+  .articleFeaturedImage {
+    max-height: 380px;
+  }
+  .storyBody > p:first-child::first-letter {
+    font-size: 3.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .articleTitle {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+  }
+  .articleFeaturedImage {
+    max-height: 280px;
   }
 }
