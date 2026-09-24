@@ -14,7 +14,7 @@ export default function Footer() {
   const content = {
     hi: {
       about: 'HINDIGENOUS',
-      aboutText: 'हम आपको देश और दुनिया की सबसे प्रामाणिक और निष्पक्ष खबरें प्रदान करते हैं। हमारा उद्देश्य आपको हर घटना के पीछे की सच्चाई से अवगत कराना है।',
+      aboutText: 'उद्यमेन हि सिद्ध्यन्ति कार्याणि न मनोरथैः। न हि सुप्तस्य सिंहस्य  प्रविशन्ति मुखे मृगाः॥',
       linksTitle: 'महत्वपूर्ण लिंक्स',
       contactText: 'ईमेल: thehindigenous@gmail.com',
       formTitle: 'संपर्क करें (Get In Touch)',
