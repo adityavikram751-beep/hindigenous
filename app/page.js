@@ -208,7 +208,6 @@ export default function Home() {
             )}
 
         {/* SECTION 1: LATEST NEWS (Left Featured Article + Right Side Articles) */}
-        <h2 className={styles.sectionHeading}>{t.latestNews}</h2>
         <div className={styles.mainGrid}>
           
           {/* Left Column: Featured Article */}
