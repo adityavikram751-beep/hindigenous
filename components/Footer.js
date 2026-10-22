@@ -17,22 +17,23 @@ export default function Footer() {
       aboutText: 'उद्यमेन हि सिद्ध्यन्ति कार्याणि न मनोरथैः। न हि सुप्तस्य सिंहस्य  प्रविशन्ति मुखे मृगाः॥',
       linksTitle: 'महत्वपूर्ण लिंक्स',
       contactText: 'ईमेल: thehindigenous@gmail.com',
-      formTitle: 'संपर्क करें (Get In Touch)',
-      namePlaceholder: 'आपका नाम (Name)',
-      emailPlaceholder: 'ईमेल पता (Email)',
-      phonePlaceholder: 'फ़ोन नंबर (Phone Number - optional)',
-      descPlaceholder: 'विवरण / संदेश लिखें (Description)...',
-      submitBtn: 'संदेश भेजें (Submit)',
+      formTitle: 'संपर्क करें',
+      namePlaceholder: 'आपका नाम',
+      emailPlaceholder: 'ईमेल पता',
+      phonePlaceholder: 'फ़ोन नंबर (वैकल्पिक)',
+      descPlaceholder: 'विवरण / संदेश लिखें...',
+      submitBtn: 'संदेश भेजें',
       submittingBtn: 'भेजा जा रहा है...',
       successMsg: '✓ आपका संदेश सफलतापूर्वक भेज दिया गया है!',
       errorMsg: 'कुछ गलत हो गया, कृपया पुनः प्रयास करें।',
-      rights: '© 2026 HINDIGENOUS. सर्वाधिकार सुरक्षित.'
+      rights: '© 2026 HINDIGENOUS. सर्वाधिकार सुरक्षित.',
+      links: ['मुखपृष्ठ', 'इतिहास', 'साहित्य', 'कला', 'संस्कृति', 'राजपथ']
     },
     en: {
       about: 'HINDIGENOUS',
-      aboutText: 'We provide you with the most authentic and unbiased news from the country and the world. Our goal is to make you aware of the truth behind every event.',
+      aboutText: 'Work is accomplished through effort, not merely by wishing; prey does not enter the mouth of a sleeping lion.',
       linksTitle: 'Important Links',
-      contactText: 'Email: contact@hindigenous.com\nPhone: +91 123 456 7890',
+      contactText: 'Email: thehindigenous@gmail.com',
       formTitle: 'Get In Touch',
       namePlaceholder: 'Your Name',
       emailPlaceholder: 'Email Address',
@@ -42,10 +43,10 @@ export default function Footer() {
       submittingBtn: 'Submitting...',
       successMsg: '✓ Thank you! Your message has been sent successfully.',
       errorMsg: 'Something went wrong, please try again.',
-      rights: '© 2026 HINDIGENOUS. All rights reserved.'
+      rights: '© 2026 HINDIGENOUS. All rights reserved.',
+      links: ['Home', 'History', 'Literature', 'Arts', 'Culture', 'Rajpath']
     }
   };
-
   const t = content[lang] || content.hi;
 
   const handleChange = (e) => {
@@ -94,12 +95,12 @@ export default function Footer() {
           <div className={styles.footerCol}>
             <h4>{t.linksTitle}</h4>
             <ul className={styles.footerLinks}>
-              <li><Link href="/">{lang === 'hi' ? 'मुखपृष्ठ' : 'Home'}</Link></li>
-              <li><Link href="/etihas">{lang === 'hi' ? 'इतिहास' : 'History'}</Link></li>
-              <li><Link href="/sahitya">{lang === 'hi' ? 'साहित्य' : 'Literature'}</Link></li>
-              <li><Link href="/kala">{lang === 'hi' ? 'कला' : 'Arts'}</Link></li>
-              <li><Link href="/sanskriti">{lang === 'hi' ? 'संस्कृति' : 'Culture'}</Link></li>
-              <li><Link href="/rajpat">{lang === 'hi' ? 'राजपथ' : 'Rajpath'}</Link></li>
+              <li><Link href="/">{t.links[0]}</Link></li>
+              <li><Link href="/etihas">{t.links[1]}</Link></li>
+              <li><Link href="/sahitya">{t.links[2]}</Link></li>
+              <li><Link href="/kala">{t.links[3]}</Link></li>
+              <li><Link href="/sanskriti">{t.links[4]}</Link></li>
+              <li><Link href="/rajpat">{t.links[5]}</Link></li>
             </ul>
           </div>
 
